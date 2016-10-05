@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F6B99DCA1D7B38A500F7E8B4 /* Callable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B99DC91D7B38A500F7E8B4 /* Callable.swift */; };
 		F6C4FB211D75C3E2009B14B4 /* Bind.h in Headers */ = {isa = PBXBuildFile; fileRef = F6C4FB1F1D75C3E2009B14B4 /* Bind.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F6C4FB281D75C493009B14B4 /* Bind.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C4FB271D75C493009B14B4 /* Bind.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F6B99DC91D7B38A500F7E8B4 /* Callable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Callable.swift; path = src/Callable.swift; sourceTree = SOURCE_ROOT; };
 		F6C4FB1C1D75C3E2009B14B4 /* Bind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6C4FB1F1D75C3E2009B14B4 /* Bind.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bind.h; sourceTree = "<group>"; };
 		F6C4FB201D75C3E2009B14B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -51,10 +53,11 @@
 			children = (
 				F6C4FB1F1D75C3E2009B14B4 /* Bind.h */,
 				F6C4FB271D75C493009B14B4 /* Bind.swift */,
+				F6B99DC91D7B38A500F7E8B4 /* Callable.swift */,
 				F6C4FB291D75C616009B14B4 /* Playground.playground */,
 				F6C4FB201D75C3E2009B14B4 /* Info.plist */,
 			);
-			path = Bind;
+			name = Bind;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6C4FB281D75C493009B14B4 /* Bind.swift in Sources */,
+				F6B99DCA1D7B38A500F7E8B4 /* Callable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

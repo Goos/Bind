@@ -1,4 +1,7 @@
 import Foundation
+import PlaygroundSupport
+
+PlaygroundPage.current.needsIndefiniteExecution = true
 
 /*: # Binding
 
@@ -59,3 +62,35 @@ func multiplyThree(a: Int, b: Int, c: Int) -> Int {
 
 let multiplyAll = produceThree >>= multiplyThree
 multiplyAll(5)
+
+/*:
+ Got function-like types? No problem. Adopting the `Callable` or `AsyncCallable` protocols 
+ makes it a breeze to use bind with your own types as well:
+ */
+final class Task: AsyncCallable {
+    typealias ReturnType = Data
+    let ints: [Int]
+
+    init(ints: [Int]) {
+        self.ints = ints
+    }
+
+    func call(callback: @escaping (Data) -> ()) {
+        DispatchQueue.global().async {
+            sleep(1)
+            callback(self.ints.reduce("", { $0 + ",\($1)" }).data(using: .ascii)!)
+        }
+    }
+}
+
+func produceInts(a: [Int]) -> [Int] {
+    return a
+}
+
+let functionA = produceInts >>= produceInts
+let functionB = functionA >>= Task.init
+//let callTaskAndParseCSV = fz >>= parseString
+//callTaskAndParseCSV("1,2,3", { print($0) }, { print($0) })
+
+let x = parseString >>= parseCSV >>= Task.init
+x(data, { print($0) }, { print($0) })
